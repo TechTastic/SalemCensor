@@ -1,0 +1,158 @@
+{
+    "swears": {
+        "[Ff][Uu][Kk]": "balderdash",
+        "[Pp][Hh][Uu][Cc][Kk]": "balderdash",
+
+        "[Cc][Ll][Ii][Tt][Oo][Rr][Ii][Ss]": "bindlestiff",
+
+        "[Bb][Aa][Ss][Tt][Ee][Rr][Dd]": "bologne",
+
+        "[Bb8][Oo0][Oo0][Bb8][Ss25]": "bosom",
+        "[Tt][Ii][Tt][Ss]": "bosom",
+        "[Tt][Ii][Tt][Tt][Yy]": "bosom",
+
+        "[Bb][Oo][Oo][Bb][Ii][Ee][Ss]": "bosoms",
+        "[Tt][Ii][Tt][Tt][Ii][Ee][Ss]": "bosoms",
+
+        "[Mm][Uu][Ff][Ff]": "breeches",
+        "[Nn][Uu][Tt][Ss][Aa][Cc][Kk]": "breeches",
+        "[Ss][Cc][Rr][Oo][Tt][Uu][Mm]": "breeches",
+
+        "[Dd][Uu][Mm][Bb][Aa][Ss][Ss]": "bumfuzzle",
+
+        "[Jj][Aa][Cc][Kk][Aa][Ss][Ss]": "carbuncle",
+
+        "[Mm][Oo][Tt][Hh][Ee][Rr][Ff].[Cc][Kk][Ee][Rr]": "cheese and crackers",
+        "[Mm][Oo][Tt][Hh][Ee][Rr][Ff].[Cc][Kk][Ii][Nn][Gg]": "cheese and crackers",
+
+        "[Bb][Aa][Ss][Tt][Aa][Rr][Dd]": "child born out of wedlock",
+
+        "[Dd][Oo][Uu][Cc][Ee]": "codswallop",
+        "[Dd][Oo][Uu][Cc][Ee][Bb][Aa][Gg]": "codswallop",
+
+        "[Bb][Oo][Nn][Ee][Rr]": "curmudgeon",
+
+        "[Cc][Oo][Cc][Kk][Ss][Uu][Cc][Kk][Ee][Rr]": "dagnabbit",
+        "[Ss][Hh].[Tt]": "dagnabbit",
+        "[Ss][Hh][Tt]": "dagnabbit",
+        "[Ff][Cc][Uu][Kk]": "dagnabbit",
+
+        "[Cc][Oo][Cc][Kk]": "doodle",
+        "[Dd][Ii][Cc][Kk]": "doodle",
+        "[Pp][Ee][Nn][Ii][Ss]": "doodle",
+
+        "[Pp][Rr][Ii][Cc][Kk]": "fellmonger",
+        "[Ww][Aa][Nn][Kk]": "fellmonger",
+
+        "[Hh][Ti][Tt][Ii][Ee][Rr]": "fopdoodle",
+        "[Hh][Ii][Tt][Ll][Ee][Rr]": "fopdoodle",
+        "[Mm][Oo][Oo][Nn][Mm][Aa][Nn]": "fopdoodle",
+        "[Mm] [Oo] [Oo] [Nn] [Mm] [Aa] [Nn]": "fopdoodle",
+        "[Ss][Tt][Aa][Ll][Ii][Nn]": "fopdoodle",
+
+        "[Cc][Uu][Mm]": "flummery",
+        "[Ss][Ee][Mm][Ee][Nn]": "flummery",
+        "[Ss][Hh][Ii][Tt]": "flummery",
+
+        "[Jj][Ii][Zz][Zz]": "fusty",
+
+        "[Oo][Rr][Gg][Aa][Ss][Mm]": "gardyloo",
+        "[Tt][Hh][Aa][Tt][Aa][Ss][Ss]": "gardyloo",
+
+        "[Dd][Aa][Mm][Nn]": "gee golly",
+        "[Dd][Aa][Mm][MmNn][Ii][Tt]": "gee golly",
+
+        "[Ss][Ll][Aa][Vv][Ee]": "hard worker",
+
+        "[Dd][Yy][Kk][Ee]": "harlot",
+        "[Kk][Uu][Nn][Tt]": "harlot",
+        "[Nn][Yy][Mm][Pp][Hh][Oo]": "harlot",
+        "[Ss][Kk][Aa][Nn][Kk]": "harlot",
+        "[Ss][Ll][Uu][Tt]": "harlot",
+        "[Tt][Rr][Aa][Mm][Pp]": "harlot",
+        "[Tt][Ww][Aa][Tt]": "harlot",
+        "[Ww][Hh][Oo][Rr][Ee]": "harlot",
+
+        "[Kk][Yy][Ss]": "kick the bucket",
+        "[Kk][Ii][Ll][Ll] [Yy][Oo][Uu][Rr][Ss][Ee][Ll][Ff]": "kick the bucket",
+
+        "[Pp][Uu][Ss][Ss][Yy]": "kitty",
+
+        "[Aa][Ll][Ll][Aa][Hh] [Aa][Cc][Kk][Bb][Aa][Rr]": "lord almighty",
+
+        "[Qq][Uu][Ee][Ee][Ff]": "malarky",
+        "[Pp][Oo][Rr][Nn]": "malarky",
+
+        "[Ff][Ii][Ss][Tt]": "mumblecrusted",
+
+        "[Ff][Ii][Ss][Tt][Ii][Nn][Gg]": "mumblecrusting",
+
+        "[Hh][Oo][Mm][Oo]": "nonbinary",
+        "[Tt][Rr][Aa][Nn][Ss][Gg][Ee][Nn][Dd][Ee][Rr]": "nonbinary",
+
+        "[Dd][Ii][Ll][Dd][Oo]": "petticoat",
+
+        "[Aa][Nn][Aa][Ll]": "pillion",
+        "[Aa][Nn][Uu][Ss]": "pillion",
+        "[Aa][Ss][Ss]": "pillion",
+        "[Aa][Ss][Ss][Hh][Oo][Ll][Ee]": "pillion",
+
+        "[Aa][Ss][Ss][Ee][Ss]": "pillions",
+
+        "[Hh][Ee][Rr][Pp][Ee][Ss]": "plague",
+        "[Hh][Ii][Vv]": "plague",
+        "[Ss][Tt][Dd]": "plague",
+
+        "[Ss][Uu][Cc][Kk] [Ii][Tt]": "plant a flower",
+        "[Ss][Uu][Cc][Kk] [Mm][Ee] [Oo][Ff][Ff]": "plant a flower",
+
+        "[Bb][Ll][Oo][Ww][Jj][Oo][Bb]": "premartical relations",
+        "[Ff][Ee][Ll][Ll][Aa][Tt][Ii][Oo]": "premartical relations",
+        "[Hh][Aa][Nn][Dd][Jj][Oo][Bb]": "premartical relations",
+        "[Rr][Ii][Mm][Jj][Oo][Bb]": "premartical relations",
+
+        "[Gg][Oo] [Tt][Oo] [Hh][Ee][Ll][Ll]": "prithee transport thyself to tarnation",
+
+        "[Pp][Uu][Mm][Pp][Kk][Ii][Nn] [Pp][Ii][Ee]": "creampie",
+
+        "[Kk][Kk][Kk]": "raggabrash",
+
+        "[Ss][Cc][Uu][Mm][Bb][Aa][Gg]": "rascal",
+
+        "[Bb][Uu][Kk][Kk][Aa][Kk][Ee]": "rigamole",
+
+        "[Vv][Aa][Gg][Ii][Nn][Aa]": "rose",
+
+        "[Cc][Ll][Ii][Tt]": "rosebud",
+
+        "[Aa][Uu][Tt][Ii][Ss][Tt][Ii][Cc]": "savant",
+        "[Rr][Ee][Tt][Aa][Rr][Dd][Ee][Dd]": "savant",
+
+        "[Bb].[Tt][Cc][Hh]": "snap crackle pop",
+        "[Bb][Ii][Aa][Tt][Cc][Hh]": "snap crackle pop",
+
+        "[Bb][Uu][Ll][Ll][Ss][Hh][Ii][Tt]": "son of a gun",
+
+        "[Ff][Uu][Cc][Kk]": "tarnation",
+        "[Ff][Uu][Cc][Kk][Ee][Rr]": "tarnation",
+        "[Ff][Uu][Cc][Kk][Ii][Nn][Gg]": "tarnation",
+
+        "[Ss][Tt][Ff][Uu]": "tell me more",
+
+        "[Nn][Aa][Zz][Ii]": "townie",
+
+        "[Aa][Nn][Ii][Ll][Ii][Nn][Gg][Uu][Ss]": "yaldson",
+
+        "[Yy][Oo][Uu] [Ss][Uu][Cc][Kk]": "you are a great player",
+
+        "[Yy][Oo][Uu] [Aa][Ee][Rr] [Gg][Aa][Rr][Bb][Aa][Gg][Ee]": "you are an amazing player",
+        "[Yy][Oo][Uu]'[Ee][Rr] [Gg][Aa][Rr][Bb][Aa][Gg][Ee]": "you are an amazing player",
+        "[Yy][Oo][Uu] [Aa][Ee][Rr] [Tt][Rr][Aa][Ss][Hh]": "you are an amazing player",
+        "[Yy][Oo][Uu]'[Ee][Rr] [Tt][Rr][Aa][Ss][Hh]": "you are an amazing player",
+
+        "[Yy][Oo][Uu] [Aa][Ee][Rr] [Gg][Aa][Yy]": "you are an upstanding citizen",
+        "[Yy][Oo][Uu]'[Ee][Rr] [Gg][Aa][Yy]": "you are an upstanding citizen",
+
+        "[Rr][Ee][Tt][Aa][Rr][Dd]": "zounderkite"
+    }
+}
