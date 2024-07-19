@@ -22,9 +22,6 @@
 
         "[Jj][Aa][Cc][Kk][Aa][Ss][Ss]": "carbuncle",
 
-        "[Mm][Oo][Tt][Hh][Ee][Rr][Ff].[Cc][Kk][Ee][Rr]": "cheese and crackers",
-        "[Mm][Oo][Tt][Hh][Ee][Rr][Ff].[Cc][Kk][Ii][Nn][Gg]": "cheese and crackers",
-
         "[Bb][Aa][Ss][Tt][Aa][Rr][Dd]": "child born out of wedlock",
 
         "[Dd][Oo][Uu][Cc][Ee]": "codswallop",
@@ -33,7 +30,6 @@
         "[Bb][Oo][Nn][Ee][Rr]": "curmudgeon",
 
         "[Cc][Oo][Cc][Kk][Ss][Uu][Cc][Kk][Ee][Rr]": "dagnabbit",
-        "[Ss][Hh].[Tt]": "dagnabbit",
         "[Ss][Hh][Tt]": "dagnabbit",
         "[Ff][Cc][Uu][Kk]": "dagnabbit",
 
@@ -116,6 +112,7 @@
         "[Pp][Uu][Mm][Pp][Kk][Ii][Nn] [Pp][Ii][Ee]": "creampie",
 
         "[Kk][Kk][Kk]": "raggabrash",
+        "[Kk][Uu] [Kk][Ll][Uu][Xx] [Kk][Ll][Aa][Nn]": "raggabrash",
 
         "[Ss][Cc][Uu][Mm][Bb][Aa][Gg]": "rascal",
 
@@ -128,7 +125,6 @@
         "[Aa][Uu][Tt][Ii][Ss][Tt][Ii][Cc]": "savant",
         "[Rr][Ee][Tt][Aa][Rr][Dd][Ee][Dd]": "savant",
 
-        "[Bb].[Tt][Cc][Hh]": "snap crackle pop",
         "[Bb][Ii][Aa][Tt][Cc][Hh]": "snap crackle pop",
 
         "[Bb][Uu][Ll][Ll][Ss][Hh][Ii][Tt]": "son of a gun",
@@ -153,6 +149,14 @@
         "[Yy][Oo][Uu] [Aa][Ee][Rr] [Gg][Aa][Yy]": "you are an upstanding citizen",
         "[Yy][Oo][Uu]'[Ee][Rr] [Gg][Aa][Yy]": "you are an upstanding citizen",
 
-        "[Rr][Ee][Tt][Aa][Rr][Dd]": "zounderkite"
+        "[Rr][Ee][Tt][Aa][Rr][Dd]": "zounderkite",
+
+        "[Ff][Aa@4][Gg]": "fumperdinkle",
+        "[Ff][Aa@4][Gg][Gg][Oo0Ee3][Tt]": "fumperdinkle",
+
+        "[Ss][Hh].[Tt]": "dagnabbit",
+        "[Bb].[Tt][Cc][Hh]": "snap crackle pop",
+        "[Mm][Oo][Tt][Hh][Ee][Rr][Ff].[Cc][Kk][Ee][Rr]": "cheese and crackers",
+        "[Mm][Oo][Tt][Hh][Ee][Rr][Ff].[Cc][Kk][Ii][Nn][Gg]": "cheese and crackers"
     }
 }
