@@ -63,7 +63,7 @@ client.on("messageCreate", async (message) => {
     // Message Contains no Censored or Banned Words
     if (matches.length == 0 && banned.length == 0) return;
 
-    
+
     // Delete Original Message
     message.delete();
 
@@ -92,7 +92,7 @@ client.on("messageCreate", async (message) => {
     // Message Contains Censored Words
 
     // Create Warning Message
-    const warning = makeWarningMessage(matches);
+    warning = makeWarningMessage(matches);
 
     // Create Imitation Webhook and Resend Message Sanitized
     const webhook = await message.channel.createWebhook({
