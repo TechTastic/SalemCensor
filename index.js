@@ -35,13 +35,13 @@ function makeWarningMessage(matches) {
 client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
 
-    var banned = [];
-    for (const word in banned) {
+    var bannedWords = [];
+    for (const word of banned) {
         const match = message.content.match(new RegExp(word, "g"));
         if (!match) continue;
-        for (const bannedInText in match) {
-            if (!banned.find((value, string, obj) => { value === string }, bannedInText)) {
-                banned.push(bannedInText);
+        for (const bannedInText of match) {
+            if (!bannedWords.find((value, string, obj) => { value === string }, bannedInText)) {
+                bannedWords.push(bannedInText);
             }
         }
     }
@@ -49,7 +49,7 @@ client.on("messageCreate", async (message) => {
     var newContent = message.content;
     var matches = [];
     for (const swear in swears) {
-        if (banned.length > 0) break;
+        if (bannedWords.length > 0) break;
 
         const match = newContent.match(new RegExp(swear, "g"));
         if (!match) continue;
@@ -63,22 +63,24 @@ client.on("messageCreate", async (message) => {
     }
 
     // Message Contains no Censored or Banned Words
-    if (matches.length == 0 && banned.length == 0) return;
+    if (matches.length == 0 && bannedWords.length == 0) return;
 
 
     // Delete Original Message
     message.delete();
 
     // Message Contained Banned Words?
-    if (banned.length > 0) {
+    if (bannedWords.length > 0) {
 
         // Create Warning Message
-        var warning = banned.join(", ");
-        var temp = warning.substring(0, banned.lastIndexOf(", "));
-        warning = temp.concat(" and ").concat(warning.substring(temp.length + 2, warning.length));
-        if (banned.length > 1) warning = warning.concat(" are ");
+        var warning = bannedWords.join(", ");
+        if (bannedWords.length > 1) {
+            var temp = warning.substring(0, warning.lastIndexOf(", "));
+            warning = temp.concat(" and ").concat(warning.substring(temp.length, warning.length));
+            warning = warning.concat(" are ");
+        }
         else warning = warning.concat(" is ");
-        warning = warning.concat(" banned by **Salem Censor**");
+        warning = warning.concat("banned by **Salem Censor**");
 
         // Create and Send Embedded DM
         const embed = new EmbedBuilder()
