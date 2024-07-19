@@ -38,8 +38,8 @@ client.on("messageCreate", async (message) => {
     var banned = [];
     for (const word in banned) {
         const match = message.content.match(new RegExp(word, "g"));
-
-        for (bannedInText in match) {
+        if (!match) continue;
+        for (const bannedInText in match) {
             if (!banned.find((value, string, obj) => { value === string }, bannedInText)) {
                 banned.push(bannedInText);
             }
@@ -50,7 +50,9 @@ client.on("messageCreate", async (message) => {
     var matches = [];
     for (const swear in swears) {
         if (banned.length > 0) break;
+
         const match = newContent.match(new RegExp(swear, "g"));
+        if (!match) continue;
         for (const swearInText of match) {
             newContent = newContent.replace(swearInText, swears[swear]);
 
