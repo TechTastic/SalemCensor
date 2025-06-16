@@ -1,7 +1,8 @@
-const {Client, GatewayIntentBits, EmbedBuilder} = require("discord.js");
+const {ActionRowBuilder, ButtonBuilder, ButtonStyle, Client, GatewayIntentBits, EmbedBuilder} = require("discord.js");
 const {token} = require("./config.json");
-const {swears} = require("./censored.json");
-const {banned} = require("./banned.json");
+const swearWords = require("./censored.json");
+const bannedWords = require("./banned.json");
+const phrases = require("./phrases.json");
 
 const client = new Client({intents: [
     GatewayIntentBits.Guilds,
@@ -11,111 +12,130 @@ const client = new Client({intents: [
     GatewayIntentBits.GuildWebhooks
 ]});
 
-function makeWarningMessage(matches) {
-    var message = "";
-    for (const index in matches) {
-        message = message.concat("`").concat(matches[index]).concat("`");
-        if (index != matches.length - 1) {
-            message = message.concat(", ");
-        }
-        if (index == matches.length - 2) {
-            message = message.concat("and ");
+function isSwearWord(word) {
+    var swear = swearWords;
+    var characters = word.split("")
+    for (const index in characters) {
+        const char = characters[index];
+        if (char === "*") break;
+
+        if (swear) {
+            swear = swear[char]
+        } else {
+            break;
         }
     }
 
-    if (matches.length > 1) {
-        message = message.concat(" are swears ");
-    } else {
-        message = message.concat(" is a swear ");
-    }
+    if (swear && swear["*"]) return swear["*"];
 
-    return message.concat("according to the Town of Salem censor!");
+    return null;
 }
+
+function replaceAnySwears(text, swears) {
+    const words = text.split(" ")
+    for (const index in words) {
+        const word = words[index];
+        const replacement = isSwearWord(word);
+        if (replacement) {
+            newText = text.replace(word, replacement);
+            swears.push(word)
+            return replaceAnySwears(newText, swears);
+        }
+    }
+
+    return [text, swears];
+}
+
+function isBannedWord(word) {
+    var banned = bannedWords;
+    var characters = word.split("")
+    for (const index in characters) {
+        const char = characters[index];
+        if (char === "*") break;
+
+        if (banned) {
+            banned = banned[char]
+        } else {
+            break;
+        }
+    }
+
+    return banned != null && "*" in banned;
+}
+
+function hasAnyBannedWords(text) {
+    const words = text.split(" ")
+    for (const index in words) {
+        const word = words[index];
+        const banned = isBannedWord(word);
+        if (banned) return [true, word];
+    }
+
+    return [false, null];
+}
+
+client.on("interactionCreate", async interaction => {
+    if (!interaction.isButton()) return;
+
+    if (interaction.customId.startsWith("show_swears_")) {
+        await interaction.deferReply()
+
+        var dataArr = interaction.customId.substring(12).split("_")
+        var originalAuthor = dataArr[0]
+        var swears = dataArr[1]
+
+        if (interaction.user.id != originalAuthor) {
+            await interaction.editReply({ content: "You are not the original message author!" })
+            return;
+        }
+
+        const embed = new EmbedBuilder()
+            .setColor(0xFF0000)
+            .addFields({ name: "Filtered Words:", value: swears})
+            .setTimestamp();
+
+        await interaction.editReply({ embeds: [embed] })
+    }
+})
 
 client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
 
-    var bannedWords = [];
-    for (const word of banned) {
-        const match = message.content.match(new RegExp(word, "g"));
-        if (!match) continue;
-        for (const bannedInText of match) {
-            if (!bannedWords.find((value, string, obj) => { value === string }, bannedInText)) {
-                bannedWords.push(bannedInText);
-            }
-        }
-    }
-    
-    var newContent = message.content;
-    var matches = [];
-    for (const swear in swears) {
-        if (bannedWords.length > 0) break;
-
-        const match = newContent.match(new RegExp(swear, "g"));
-        if (!match) continue;
-        for (const swearInText of match) {
-            newContent = newContent.replace(swearInText, swears[swear]);
-
-            if (!matches.find((value, string, obj) => { value === string }, swearInText)) {
-                matches.push(swearInText)
-            }
-        }
-    }
-
-    // Message Contains no Censored or Banned Words
-    if (matches.length == 0 && bannedWords.length == 0) return;
-
-
-    // Delete Original Message
-    message.delete();
-
-    // Message Contained Banned Words?
-    if (bannedWords.length > 0) {
-
-        // Create Warning Message
-        var warning = bannedWords.join(", ");
-        if (bannedWords.length > 1) {
-            var temp = warning.substring(0, warning.lastIndexOf(", "));
-            warning = temp.concat(" and ").concat(warning.substring(temp.length, warning.length));
-            warning = warning.concat(" are ");
-        }
-        else warning = warning.concat(" is ");
-        warning = warning.concat("banned by **Salem Censor**");
-
-        // Create and Send Embedded DM
-        const embed = new EmbedBuilder()
-        .setColor(0xFF0000)
-        .addFields({ name: "You said banned words on **".concat(message.guild.name).concat("**!"), value: warning})
-        .setTimestamp();
-        message.author.send({ embeds: [embed] });
-
+    const bannedArr = hasAnyBannedWords(message.content);
+    const hasBannedWords = bannedArr[0]
+    if (hasBannedWords) {
+        message.delete();
         return;
     }
 
+    var message = message.content
+    
+    const swearArr = replaceAnySwears(message, []);
+    const swearlessMessage = swearArr[0]
+    const swears = swearArr[1]
+    if (swears.length === 0) return;
 
-    // Message Contains Censored Words
+    const button = new ButtonBuilder()
+        .setCustomId("show_swears_" + message.author.id + "_" + swears.toString())
+        .setLabel("Swears")
+        .setStyle(ButtonStyle.Danger)
 
-    // Create Warning Message
-    warning = makeWarningMessage(matches);
+    const row = new ActionRowBuilder()
+        .addComponents(button);
 
-    // Create Imitation Webhook and Resend Message Sanitized
+    message.delete()
+
     const webhook = await message.channel.createWebhook({
         channel: message.channel,
         name: message.author.displayName,
         reason: "Filtering Swears"
     });
-    await webhook.send({ content: newContent,
-        avatarURL: message.author.displayAvatarURL()
+    await webhook.send({ 
+        content: swearlessMessage,
+        avatarURL: message.author.displayAvatarURL(),
+        components: [row]
     });
     webhook.delete("No Longer Needed");
-
-    // Send embedded DM warning about the used swears
-    const embed = new EmbedBuilder()
-    .setColor(0xFF0000)
-    .addFields({ name: "You Swore on **".concat(message.guild.name).concat("**!"), value: warning})
-    .setTimestamp();
-    message.author.send({ embeds: [embed] });
 });
-
 
 client.login(token);
